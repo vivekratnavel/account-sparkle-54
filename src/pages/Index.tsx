@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { DashboardSidebar } from "@/components/dashboard/DashboardSidebar";
 import { DashboardOverview } from "@/components/dashboard/DashboardOverview";
+import { AccountManagement } from "@/components/dashboard/AccountManagement";
+import { UserManagement } from "@/components/dashboard/UserManagement";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("overview");
@@ -15,19 +17,9 @@ const Index = () => {
       case "overview":
         return <DashboardOverview onAccountSelect={handleAccountSelect} />;
       case "accounts":
-        return (
-          <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-foreground">Account Management</h2>
-            <p className="text-muted-foreground">Detailed account management interface coming soon.</p>
-          </div>
-        );
+        return <AccountManagement />;
       case "users":
-        return (
-          <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-foreground">User Management</h2>
-            <p className="text-muted-foreground">User management interface coming soon.</p>
-          </div>
-        );
+        return <UserManagement />;
       case "analytics":
         return (
           <div className="space-y-6">
